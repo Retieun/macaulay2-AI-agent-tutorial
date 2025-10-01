@@ -1,20 +1,19 @@
 # Macaulay2 AI Agent with Claude
 
-AI agent powered by Claude (Anthropic) for solving algebraic geometry and commutative algebra problems using Macaulay2.
+I know everyone using Macaulay2 is smarter than enough to set these things up. But if these saves you a couple minutes, please give me like or #star
 
 ## Features
 
 - Natural language interface for Macaulay2
-- Powered by Claude Sonnet 4
-- Gröbner bases, Hilbert series, resolutions
+- Powered by Claude Sonnet 4 (or any other LLMs)
 - LangChain-based agent architecture
 
 ## Prerequisites
 
-- macOS 10.15+
+- macOS 10.15+ (or Linux)
 - Python 3.8+
 - Homebrew
-- Anthropic API key with billing enabled
+- Anthropic API key with billing enabled (or other API)
 
 ## Quick Start
 
