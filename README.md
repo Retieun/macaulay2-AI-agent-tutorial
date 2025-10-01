@@ -1,7 +1,6 @@
 # Macaulay2 AI Agent with Claude
 
-I know everyone using Macaulay2 is smarter than enough to set these things up. But if these saves you a couple minutes, please give me like or #star
-
+I know everyone using Macaulay2 is smarter than enough to set these things up. But it would be nice if this can save you a couple minutes from typing them yourself.
 ## Features
 
 - Natural language interface for Macaulay2
