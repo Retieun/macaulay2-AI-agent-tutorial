@@ -1,18 +1,20 @@
 # Macaulay2 AI Agent with Claude
 
 I know everyone using Macaulay2 is smarter than enough to set these things up. But it would be nice if this can save you a couple minutes from typing them yourself.
+
 ## Features
 
 - Natural language interface for Macaulay2
-- Powered by Claude Sonnet 4 (or any other LLMs)
+- Powered by Claude Sonnet 4
+- Gröbner bases, Hilbert series, resolutions
 - LangChain-based agent architecture
 
 ## Prerequisites
 
-- macOS 10.15+ (or Linux)
+- macOS 10.15+
 - Python 3.8+
 - Homebrew
-- Anthropic API key with billing enabled (or other API)
+- Anthropic API key with billing enabled
 
 ## Quick Start
 
@@ -111,6 +113,56 @@ User Query → Claude Agent → Macaulay2Tool → Executor → M2 → Results �
 - ~$0.05-$0.20 per query
 - $5 minimum credit
 - Monitor: https://console.anthropic.com/settings/usage
+
+## Using Other LLMs
+
+The agent is designed to work with Claude but can be adapted for other LLMs:
+
+### OpenAI (GPT-4)
+
+1. Install: `pip install langchain-openai openai`
+2. Update `.env`:
+```
+OPENAI_API_KEY=sk-proj-your-key-here
+```
+3. Modify `agent.py`:
+```python
+from langchain_openai import ChatOpenAI  # Replace import
+
+# In __init__, replace:
+self.llm = ChatOpenAI(model="gpt-4", temperature=temperature, max_tokens=4096)
+```
+
+### Google Gemini
+
+1. Install: `pip install langchain-google-genai google-generativeai`
+2. Update `.env`:
+```
+GOOGLE_API_KEY=your-key-here
+```
+3. Modify `agent.py`:
+```python
+from langchain_google_genai import ChatGoogleGenerativeAI
+
+# In __init__, replace:
+self.llm = ChatGoogleGenerativeAI(model="gemini-pro", temperature=temperature)
+```
+
+### Ollama (Local/Free)
+
+1. Install Ollama: https://ollama.ai
+2. Pull a model: `ollama pull llama2`
+3. Install: `pip install langchain-ollama`
+4. Modify `agent.py`:
+```python
+from langchain_ollama import ChatOllama
+
+# In __init__, replace:
+self.llm = ChatOllama(model="llama2", temperature=temperature)
+# Remove API key requirement
+```
+
+**Note**: Claude Sonnet 4 performs best for mathematical reasoning. Other models may require prompt adjustments for optimal results.
 
 ## Troubleshooting
 
