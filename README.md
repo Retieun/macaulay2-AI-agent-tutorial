@@ -24,39 +24,20 @@ An intelligent agent that can:
 
 ---
 
-##  1. Install Dependencies
-# Install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 # Install Macaulay2
 brew tap macaulay2/tap
 brew install macaulay2
 
-# Verify
-M2 --version
-
-##  2.  Setup Project
-# Create project
-mkdir macaulay2-agent && cd macaulay2-agent
-
-# Create virtual environment
+# Clone and setup
+git clone https://github.com/YOUR-USERNAME/macaulay2-agent.git
+cd macaulay2-agent
 python3 -m venv venv
 source venv/bin/activate
+pip install -r requirements.txt
 
-# Install packages
-pip install anthropic langchain langchain-anthropic python-dotenv
-
-##  3.  Configure API Key
-#  Create .env file
+# Configure API key
 echo 'ANTHROPIC_API_KEY=sk-ant-api03-your-key-here' > .env
-chmod 600 .env
-#  Project Structure
-macaulay2-agent/
-├── agent.py                 # Main agent
-├── macaulay2_executor.py    # M2 code executor
-├── m2_tool.py              # LangChain tool wrapper
-├── .env                    # API key (gitignored)
-└── requirements.txt         # Dependencies
 
-
+# Run
+python3 agent.py
 
