@@ -5,7 +5,7 @@ I know everyone using Macaulay2 is smarter than enough to set these things up. B
 ## Features
 
 - Natural language interface for Macaulay2
-- Powered by Claude Sonnet 4
+- Powered by Claude Sonnet 4.5 (or your favorite LLM)
 - Gröbner bases, Hilbert series, resolutions
 - LangChain-based agent architecture
 
