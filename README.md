@@ -24,7 +24,7 @@ brew tap macaulay2/tap
 brew install macaulay2
 
 # Clone and setup
-git clone https://github.com/YOUR-USERNAME/macaulay2-agent.git
+git clone https://github.com/Retieun/macaulay2-agent.git
 cd macaulay2-agent
 python3 -m venv venv
 source venv/bin/activate
